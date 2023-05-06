@@ -1,0 +1,39 @@
+[package]
+name = "chest"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ink = { version = "4.1.0", default-features = false }
+ink_lang = { version = "3.0.0-rc3", default-features = false }
+ink_primitives = { version = "4.0.1", default-features = false }
+ink_storage = { version = "4.1.0", default-features = false }
+ink_env = { version = "4.1.0", default-features = false }
+ink_prelude = { version = "4.1.0", default-features = false }
+
+[dependencies.scale-info]
+version = "2.5.0"
+default-features = false
+features = ["derive"]
+
+[dependencies.metadata]
+version = "0.1.6"
+default-features = false
+
+[lib]
+name = "chest"
+path = "src/lib.rs"
+crate-type = ["cdylib"]
+
+[features]
+default = []
+std = [
+  "ink_lang/std",
+  "ink_primitives/std",
+  "ink_storage/std",
+  "ink_env/std",
+  "ink_prelude/std",
+  "scale-info/std",
+]
